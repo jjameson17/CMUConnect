@@ -1,5 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="row column text-center">
+<h1>Welcome <%= @mentor.id %></h1>
+
+</div>
+
+<div class="row" id="content">
+<div class="medium-4 columns">
+<div class="blog-post">
+<h3>Mentor Profile <small></small></h3>
+<img class="thumbnail" src="https://placehold.it/850x600">
+
+<%= image_tag('linkedin_icon.png', size: "120x120") %>
+&nbsp;&nbsp;
+<%= image_tag('chat_icon.png', size: "105x105") %>
+
+</div>
+
+</div>
+<div class="medium-6 columns">
+<br></br>
 <p>
   <strong>User:</strong>
   <%= @mentor.user_id %>
@@ -27,3 +48,5 @@
 
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
+</div>
+
