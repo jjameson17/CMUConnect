@@ -1,0 +1,1 @@
+json.array! @student_group_associations, partial: 'student_group_associations/student_group_association', as: :student_group_association

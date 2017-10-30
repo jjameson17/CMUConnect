@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @mentee.user_id %>
+</p>
+
+<p>
+  <strong>Preferred industry:</strong>
+  <%= @mentee.preferred_industry %>
+</p>
+
+<p>
+  <strong>Expected graduation:</strong>
+  <%= @mentee.expected_graduation %>
+</p>
+
+<%= link_to 'Edit', edit_mentee_path(@mentee) %> |
+<%= link_to 'Back', mentees_path %>

@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User type:</strong>
+  <%= @user.user_type %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Home state:</strong>
+  <%= @user.home_state %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @user.major %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @user.school %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @user.bio %>
+</p>
+
+<p>
+  <strong>Image filename:</strong>
+  <%= @user.image_filename %>
+</p>
+
+<p>
+  <strong>Resume filename:</strong>
+  <%= @user.resume_filename %>
+</p>
+
+<p>
+  <strong>Linkedin:</strong>
+  <%= @user.linkedin %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

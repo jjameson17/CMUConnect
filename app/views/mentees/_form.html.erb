@@ -1,0 +1,29 @@
+<%= form_for(@mentee) do |f| %>
+  <% if @mentee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mentee.errors.count, "error") %> prohibited this mentee from being saved:</h2>
+
+      <ul>
+      <% @mentee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :preferred_industry %><br>
+    <%= f.text_field :preferred_industry %>
+  </div>
+  <div class="field">
+    <%= f.label :expected_graduation %><br>
+    <%= f.number_field :expected_graduation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

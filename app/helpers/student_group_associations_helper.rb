@@ -1,0 +1,2 @@
+module StudentGroupAssociationsHelper
+end
