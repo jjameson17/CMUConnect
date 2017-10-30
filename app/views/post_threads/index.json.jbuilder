@@ -1,0 +1,1 @@
+json.array! @post_threads, partial: 'post_threads/post_thread', as: :post_thread

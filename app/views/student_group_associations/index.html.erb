@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Student Group Associations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student group</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_group_associations.each do |student_group_association| %>
+      <tr>
+        <td><%= student_group_association.student_group_id %></td>
+        <td><%= student_group_association.user_id %></td>
+        <td><%= link_to 'Show', student_group_association %></td>
+        <td><%= link_to 'Edit', edit_student_group_association_path(student_group_association) %></td>
+        <td><%= link_to 'Destroy', student_group_association, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student group association', new_student_group_association_path %>

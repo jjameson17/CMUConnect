@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :messages
+  resources :student_group_associations
+  resources :student_groups
+  resources :resources
+  resources :post_threads
+  resources :posts
+  resources :users
+  resources :groups
+  resources :mentees
+  resources :matches
+  resources :mentors
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

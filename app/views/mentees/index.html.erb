@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mentees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Preferred industry</th>
+      <th>Expected graduation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mentees.each do |mentee| %>
+      <tr>
+        <td><%= mentee.user_id %></td>
+        <td><%= mentee.preferred_industry %></td>
+        <td><%= mentee.expected_graduation %></td>
+        <td><%= link_to 'Show', mentee %></td>
+        <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
+        <td><%= link_to 'Destroy', mentee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mentee', new_mentee_path %>

@@ -1,0 +1,1 @@
+json.partial! "student_group_associations/student_group_association", student_group_association: @student_group_association
