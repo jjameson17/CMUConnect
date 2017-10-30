@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'home/signin', to: 'home#signin', as: :signin
+  get 'home/menteedashboard', to: 'home#menteedashboard', as: :menteedashboard
 
   # You can have the root of your site routed with "root"
   root 'home#index'
