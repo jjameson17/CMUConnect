@@ -1,69 +1,26 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  <%= simple_nested_form_for @user, :html => { :class => 'form-horizontal' } do |user_form| %>
+    <div class="row">
+      <div class="span7">
+        <fieldset>
+          <legend><%= controller.action_name.capitalize %> User</legend>
+          <%= render :partial => "user_fields", :locals => { :f => user_form } %>
+        </fieldset>
+      </div>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="span5">
+      <legend>Mentee</legend>
+        <div id="user_mentee">
+          <%= user_form.simple_fields_for :mentee do |mentee_form| %>
+            <%= render :partial => "mentee_fields", :locals => { :f => mentee_form } %>
+          <% end %> 
+        </div> 
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= user_form.submit nil, :class => 'button radius' %>
+      <%= link_to 'Cancel', users_path, :class => 'button secondary' %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_type %><br>
-    <%= f.text_field :user_type %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :home_state %><br>
-    <%= f.text_field :home_state %>
-  </div>
-  <div class="field">
-    <%= f.label :major %><br>
-    <%= f.text_field :major %>
-  </div>
-  <div class="field">
-    <%= f.label :school %><br>
-    <%= f.text_field :school %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br>
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :image_filename %><br>
-    <%= f.text_field :image_filename %>
-  </div>
-  <div class="field">
-    <%= f.label :resume_filename %><br>
-    <%= f.text_field :resume_filename %>
-  </div>
-  <div class="field">
-    <%= f.label :linkedin %><br>
-    <%= f.text_field :linkedin %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
+

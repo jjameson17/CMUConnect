@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    mentee = @user.build_mentee
+    mentor = @user.build_mentor
   end
 
   # GET /users/1/edit
@@ -69,6 +71,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_type, :first_name, :last_name, :email, :username, :password, :home_state, :major, :school, :bio, :image_filename, :resume_filename, :linkedin)
+      params.require(:user).permit(:user_type, :first_name, :last_name, :email, :username, :password, :home_state, :major, :school, :bio, :image_filename, :resume_filename, :linkedin, 
+      mentee_attributes: [:user_id, :preferred_industry, :expected_graduation, :industry_preference, :home_state_preference, :major_preference, :student_group_preference], mentor_attributes: [:user_id, :company, :industry, :graduation, :job_title])
     end
 end
