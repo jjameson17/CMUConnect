@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030032059) do
+ActiveRecord::Schema.define(version: 20171106030533) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
@@ -32,8 +32,12 @@ ActiveRecord::Schema.define(version: 20171030032059) do
     t.integer  "user_id"
     t.string   "preferred_industry"
     t.integer  "expected_graduation"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "industry_preference"
+    t.integer  "home_state_preference"
+    t.integer  "major_preference"
+    t.integer  "student_group_preference"
   end
 
   create_table "mentors", force: :cascade do |t|
