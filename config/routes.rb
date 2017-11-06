@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'home/signin', to: 'home#signin', as: :signin
   get 'home/menteedashboard', to: 'home#menteedashboard', as: :menteedashboard
-  get 'groups/group_forum', to: 'groups#group_forum', as: :group_forum
+  get 'home/public_forum', to: 'home#public_forum', as: :public_forum
 
   # You can have the root of your site routed with "root"
   root 'home#index'
