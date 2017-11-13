@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'home/signin', to: 'home#signin', as: :signin
   get 'home/menteedashboard', to: 'home#menteedashboard', as: :menteedashboard
-  get 'user/new_mentor', to: 'user#new_mentor'
+  get 'new_mentor', to: 'users#new_mentor'
   
   get  '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
