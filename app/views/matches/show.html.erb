@@ -19,6 +19,11 @@
   <strong>Group:</strong>
   <%= @match.group_id %>
 </p>
+<p>
+    <strong>Closest Match:</strong>
+    <%= @match.generate_match %>
+</p>
+	
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>

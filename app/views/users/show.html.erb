@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Match:</strong>
+  <%= current_user.generate_match %>
+</p>
+<p>
   <strong>User type:</strong>
   <%= @user.user_type %>
 </p>
