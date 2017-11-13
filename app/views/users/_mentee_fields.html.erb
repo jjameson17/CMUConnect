@@ -1,0 +1,29 @@
+  <div class="fields">
+    <div class="min_mentee">
+    <!-- <div class="field">
+      <%= f.label :user_id %><br>
+      <%= f.number_field :user_id %>
+    </div> -->
+    <div class="field">
+      <%= f.text_field :preferred_industry, placeholder: "Preferred Industry" %>
+    </div>
+    <div class="field">
+       <%= f.number_field :expected_graduation, placeholder: "Expected Graduation Year" %>
+    </div>
+	<h4>Matching Preferences</h4>
+	<br></br>
+	<p>Please rank the following criteria in generating your match to a mentor and group</p>
+    <div class="field">
+	  <%= f.select :industry_preference, [1, 2, 3, 4], prompt: "Industry Preference Rank" %>
+    </div>
+    <div class="field">
+	  <%= f.select :home_state_preference, [1, 2, 3, 4], prompt: "Home State Preference Rank" %>
+    </div>
+    <div class="field">
+	  <%= f.select :major_preference, [1, 2, 3, 4], prompt: "Major Preference Rank" %>
+    </div>
+    <div class="field">
+	  <%= f.select :student_group_preference, [1, 2, 3, 4], prompt: "Student Group Preference Rank" %>
+    </div>	
+    </div>
+  </div>

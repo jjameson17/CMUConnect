@@ -10,9 +10,9 @@
 <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
 
 	<br></br>
-        <div id="user_mentee">
-          <%= user_form.simple_fields_for :mentee do |mentee_form| %>
-            <%= render :partial => "mentee_fields", :locals => { :f => mentee_form } %>
+        <div id="user_mentor">
+          <%= user_form.simple_fields_for :mentor do |mentor_form| %>
+            <%= render :partial => "mentor_fields", :locals => { :f => mentor_form } %>
           <% end %> 
   </div>
     </div>

@@ -4,27 +4,30 @@
     <div class="top-bar-left">
       <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
       	<li><strong>CMU CONNECT</strong>&nbsp;
-        <li><a href="#">STUDENT</a></li>
-        <li><a href="#">ALUMNI</a></li>
+        <li><a href="#">FORUM</a></li>
+        <li><a href="#">RESOURCE VAULT</a></li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
         <li>Already have an account? </li>
-        <li><a href="about.html" class="button round tiny info">Sign In</a></li>
+        <%= link_to "Sign In", login_path, class: "button round tiny info" %>
       </ul>
     </div>
   </div>
 </div>
 
+<<<<<<< HEAD
 hey friends
 
+=======
+>>>>>>> 85fc428f475f26f0670ca7397827247c3e52f7f0
 </br></br>
 <div class="work-feature-block row">
 	<h4 class="work-feature-block-header">Connect with a mentor today!</h4></br>
   <div class="columns medium-7">
-    <img class="work-feature-block-image" <%= image_tag 'home.jpg' %>>
-    <p class="form-registration-member-signin">Already a member? <a href="#">Sign in</a></p>
+    <img class="work-feature-block-image" <%= image_tag 'home.jpg' %>
+    <p class="form-registration-member-signin">Already a member? <%= link_to "Sign In", login_path%></p>
     	 <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a>|<a href="#">Privacy</a></p>
   </div>
   <div class="columns medium-5">
@@ -43,7 +46,7 @@ hey friends
         <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
         <input class="login-box-input" type="password" name="password" placeholder="Password" />
         <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
-        <input class="button round info expanded" type="submit" name="signup_submit" value="Sign me up" />
+        <%= link_to "Sign up now!", sign_up_path, class: "button round info expanded" %>
       </div>
     </div>
   </div>
