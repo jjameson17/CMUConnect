@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     mentee = @user.build_mentee
     mentor = @user.build_mentor
   end
+  
+  def new_mentor
+    @user = User.new
+    mentor = @user.build_mentor
+  end
 
   # GET /users/1/edit
   def edit

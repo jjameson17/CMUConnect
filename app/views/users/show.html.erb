@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>User type:</strong>
   <%= @user.user_type %>
@@ -64,6 +65,33 @@
   <strong>Linkedin:</strong>
   <%= @user.linkedin %>
 </p>
+
+
+<% if @user.user_type == "Mentee" %>
+
+<p>
+  <strong>Match:</strong>
+  <%= @user.generate_match %>
+</p>
+<p>
+  <strong>Industry Preference:</strong>
+  <%= @user.mentee.industry_preference %>
+</p>
+
+<p>
+  <strong>Major Preference:</strong>
+  <%= @user.mentee.major_preference %>
+</p>
+
+<p>
+  <strong>State Preference:</strong>
+  <%= @user.mentee.home_state_preference %>
+</p>
+<p>
+	<strong>Student Group Preference:</strong>
+	<%= @user.mentee.student_group_preference %>
+</p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
