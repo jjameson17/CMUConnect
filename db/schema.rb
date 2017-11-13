@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106030533) do
+ActiveRecord::Schema.define(version: 20171107193044) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
@@ -102,7 +102,6 @@ ActiveRecord::Schema.define(version: 20171106030533) do
     t.string   "last_name"
     t.string   "email"
     t.string   "username"
-    t.string   "password"
     t.string   "home_state"
     t.string   "major"
     t.string   "school"
@@ -112,6 +111,7 @@ ActiveRecord::Schema.define(version: 20171106030533) do
     t.string   "linkedin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

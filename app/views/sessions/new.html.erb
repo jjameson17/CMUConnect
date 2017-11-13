@@ -1,0 +1,27 @@
+<% provide(:title, "Sign In") %>
+<div class="translucent-form-overlay">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <h3>Sign In</h3>
+    <div class="row columns">
+      <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+    </br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+    </br>
+      <%= f.submit "Sign In", class: "primary button expanded search-button"%>
+    </br></br>
+    <p>
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-danger" %>
+  <% end %>
+  </p>
+    <% end %>
+
+  </br>
+    <p>New user? <%= link_to "Sign up now!", sign_up_path %></p>
+  </div>
+</div>
+
+    
