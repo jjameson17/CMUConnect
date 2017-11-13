@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'home/signin', to: 'home#signin', as: :signin
   get 'home/menteedashboard', to: 'home#menteedashboard', as: :menteedashboard
+  get 'user/new_mentor' => 'user#new_mentor'
 
   # You can have the root of your site routed with "root"
   root 'home#index'
