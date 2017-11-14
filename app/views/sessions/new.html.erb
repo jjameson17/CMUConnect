@@ -1,7 +1,10 @@
 <% provide(:title, "Sign In") %>
 <div class="translucent-form-overlay">
   <%= form_for(:session, url: login_path) do |f| %>
-    <h3>Sign In</h3>
+    <center><%= image_tag('cmu.png', size: "150x150")%></center>
+    </br><center><h3>Sign In</h3></center>
+    </br><center><h6>Log in as a student or mentor</h6></center>
+    </br>
     <div class="row columns">
       <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
@@ -20,7 +23,7 @@
     <% end %>
 
   </br>
-    <p>New user? <%= link_to "Sign up now!", sign_up_path %></p>
+    <center><p>New user? <%= link_to "Sign up now!", sign_up_path %></p></center>
   </div>
 </div>
 
