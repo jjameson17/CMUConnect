@@ -900,4 +900,27 @@ button.radius, .button.radius {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
   }
+
 }
+
+.login-box .or {
+  position: absolute;
+  top: 65%;
+  left: 68%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: inline-block;
+  min-width: 2.1em;
+  padding: 0.3em;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  text-align: center;
+  font-size: 1.275rem;
+  background: #cacaca;
+  box-shadow: 0 2px 4px rgba(10, 10, 10, 0.4);
+}
+
+button.dark-green { background-color: #0B962F; }
+
+
