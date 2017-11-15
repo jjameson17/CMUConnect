@@ -6,6 +6,10 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.all
   end
+  
+  def generate_match
+    puts "generate match"
+  end
 
   # GET /matches/1
   # GET /matches/1.json

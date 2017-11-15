@@ -22,27 +22,21 @@
 <div class="work-feature-block row">
 	<h4 class="work-feature-block-header">Connect with a mentor today!</h4></br>
   <div class="columns medium-7">
+  </br>
     <img class="work-feature-block-image" <%= image_tag 'home.jpg' %>
-    <p class="form-registration-member-signin">Already a member? <%= link_to "Sign In", login_path%></p>
-    	 <p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a>|<a href="#">Privacy</a></p>
   </div>
   <div class="columns medium-5">
     <div class="login-box">
   <div class="row collapse expanded">
     <div class="small-12 medium-6 column small-order-2 medium-order-1">
       <div class="login-box-form-section">
-        <h1 class="login-box-title">Sign up now!</h1>
-        <select class= "has-dropdown" name="user_type">
-        	<option value="" disabled selected>Mentor or Mentee</option>
-  			<option value="mentor">Mentor</option>
-  			<option value="mentee">Mentee</option>
-		</select>
-		<input class="has-dropdown" type="text" name="username" placeholder="Full Name" />
-        <input class="has-dropdown" type="text" name="username" placeholder="Username" />
-        <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
-        <input class="login-box-input" type="password" name="password" placeholder="Password" />
-        <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
-        <%= link_to "Sign up now!", sign_up_path, class: "button round info expanded" %>
+        <center><h1 class="login-box-title">Sign up now!</h1></center>
+        <center><h5>Sign up as a</h5></center></br>
+        <%= link_to "Student", sign_up_path, :class => "button primary round expanded" %>
+    	</br><div class="or">OR</div>
+        </br><%= link_to "Alum", new_mentor_path, :class => "button alert round expanded" %>
+         </br><center><p class="form-registration-member-signin">Already a member? <%= link_to "Sign In", login_path%></p></center>
+    	 <center><p class="form-registration-terms"><a href="#">Terms &amp; Conditions</a>|<a href="#">Privacy</a></p></center>
       </div>
     </div>
   </div>

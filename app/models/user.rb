@@ -9,6 +9,164 @@ class User < ActiveRecord::Base
   has_many :student_groups, through: :student_group_associations
   has_secure_password
   
+    
+    #pref = 1
+    #group mentors with matching criteria - group1
+      #if group1 is empty
+        # find pref2
+        # group mentors with matching criteria - group2
+          #check group2 empty 
+            #find pref3
+            #group mentors with matching criteria - group3
+              #group3.first
+          #else group2 not empty
+            #find pref 3
+            #group mentors with matching criteria - group3
+              #group3.first
+      #else group1 not empty
+        # find pref2
+        # group mentors with matching criteria - group2
+          #check group2 empty 
+            #find pref3
+            #group mentors with matching criteria - group3
+              #group3.first
+          #else group2 not empty
+            #find pref 3
+            #group mentors with matching criteria - group3
+              #group3.first
+              
+  
+              
+              
+  def group_rank
+    industry_group = Mentor.all.select {|n| n if n.industry == self.mentee.preferred_industry}
+    state_group = Mentor.all.select {|n| n if User.find(n.user_id).home_state == self.home_state}
+    major_group = Mentor.all.select {|n| n if User.find(n.user_id).major == self.major}
+    #Industry
+    if self.mentee.industry_preference == 1
+      group1 = industry_group
+    elsif self.mentee.industry_preference == 2
+      group2 = industry_group
+    elsif self.mentee.industry_preference == 3
+      group3 = industry_group
+    end
+    #Major
+    if self.mentee.major_preference == 1
+      group1 = major_group
+    elsif self.mentee.major_preference == 2
+      group2 = major_group
+    elsif self.mentee.major_preference == 3
+      group3 = major_group
+    end
+    #State
+    if self.mentee.home_state_preference == 1
+      group1 = state_group
+    elsif self.mentee.home_state_preference == 2
+      group2 = state_group
+    elsif self.mentee.home_state_preference == 3
+      group3 = state_group
+    end
+    if group1.nil?
+      group1 = []
+    end
+    if group2.nil?
+      group2 = []
+    end
+    if group3.nil?
+      group3 = []
+    end
+    match_helper(group1, group2, group3)
+  end
+  
+  def match_helper(group1, group2, group3)
+    level1 = find_intersection(group1, group2)
+    level2 = find_intersection(level1, group3)
+  end
+  
+  def find_intersection(first_group, second_group)
+    if first_group.empty? && second_group.empty?
+      return []
+    elsif first_group.empty?
+      return second_group
+    elsif second_group.empty?
+      return first_group
+    else
+      final_group = first_group & second_group
+    end
+    if final_group.empty?
+      return first_group
+    else 
+      return final_group
+    end
+  end
+  
+  def generate_match
+    matches = group_rank
+  end
+  
+
+    
+  #
+  # def generate_match
+  #   if self.mentee.industry_preference == 1
+  #     group1 = Mentor.all.select {|n| n if n.industry == self.mentee.preferred_industry}
+  #     #check group1 empty
+  #     if group1.empty?
+  #       if self.mentee.home_state_preference == 2
+  #         group2 = Mentor.all.select {|n| n if User.find(n.user_id).home_state == self.home_state}
+  #         #check group2 empty
+  #         if group2.empty?
+  #           if self.mentee.major_preference == 3
+  #             group3 = Mentor.all.select {|n| n if User.find(n.user_id).major == self.major}
+  #           end
+  #           #find mentor with least number of matches
+  #           group3.first #temp
+  #
+  #         else
+  #           if self.mentee.major_preference == 3
+  #             group3 = group2.select {|n| n if User.find(n.user_id).major == self.major}
+  #           end
+  #           #find mentor with least number of matches
+  #           group3.first #temp
+  #
+  #       #check preference for major
+  #       if self.mentee.major_preference == 2
+  #         group2 = Mentor.all.select {|n| n if User.find(n.user_id).major == self.major}
+  #         #check group2 empty
+  #         if group2.empty?
+  #           if self.mentee.home_state_preference == 3
+  #             group3 = group2.select {|n| n if User.find(n.user_id).home_state == self.home_state}
+  #           end
+  #
+  #     else
+  #       if self.mentee.home_state_preference == 2
+  #         group2 = group1.select {|n| n if User.find(n.user_id).home_state == self.home_state}
+  #         if self.mentee.major_preference == 3
+  #           group3 = group2.select {|n| n if User.find(n.user_id).major == self.major}
+  #         end
+  #         #find mentor with least number of matches
+  #         group3.first #temp
+  #       if self.mentee.major_preference == 2
+  #         group2 = group1.select {|n| n if User.find(n.user_id).major == self.major}
+  #         if self.mentee.home_state_preference == 3
+  #           group3 = group2.select {|n| n if User.find(n.user_id).home_state == self.home_state}
+  #         end
+  #         #find mentor with least number of matches
+  #         group3.first
+  #       end
+  #     end
+  #     if self.mentee.major_preference == 2
+  #       group2 = group1.select {|n| n if User.find(n.user_id).major == self.major}
+  #     end
+  #   end
+  #   if self.mentee.home_state_preference == 1
+  #     group1 = Mentor.all.select {|n| n if User.find(n.user_id).home_state == self.home_state}
+  #   end
+  #   if self.mentee.major_preference == 1
+  #     group1 = Mentor.all.select {|n| n if User.find(n.user_id).major == self.major}
+  #   end
+  # end
+  
   #allow mentee creation within user
   accepts_nested_attributes_for :mentee, reject_if: lambda { |mentee| mentee[:expected_graduation].blank? }, allow_destroy: true
   #allow mentor creation within user
