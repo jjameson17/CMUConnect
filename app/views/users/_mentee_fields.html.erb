@@ -5,7 +5,7 @@
       <%= f.number_field :user_id %>
     </div> -->
     <div class="field">
-      <%= f.text_field :preferred_industry, placeholder: "Preferred Industry" %>
+      <%= f.select :preferred_industry, ["Advertising", "Education", "Finance", "Health","Investment", "Manufacturing", "Pharmaceutical", "Retail", "Sales", "Software", "Other"], prompt:  "Preferred Industry", placeholder: "Preferred Industry" %>
     </div>
     <div class="field">
        <%= f.number_field :expected_graduation, placeholder: "Expected Graduation Year" %>
