@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107193044) do
+ActiveRecord::Schema.define(version: 20171118020334) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171107193044) do
     t.integer  "home_state_preference"
     t.integer  "major_preference"
     t.integer  "student_group_preference"
+    t.integer  "work_location_preference"
   end
 
   create_table "mentors", force: :cascade do |t|
@@ -109,9 +110,11 @@ ActiveRecord::Schema.define(version: 20171107193044) do
     t.string   "image_filename"
     t.string   "resume_filename"
     t.string   "linkedin"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "password_digest"
+    t.string   "student_group_category"
+    t.string   "work_location"
   end
 
 end
