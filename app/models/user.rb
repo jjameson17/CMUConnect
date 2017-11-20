@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
     industry_group = Mentor.all.select {|n| n if n.industry == self.mentee.preferred_industry}
     state_group = Mentor.all.select {|n| n if User.find(n.user_id).home_state == self.home_state}
     major_group = Mentor.all.select {|n| n if User.find(n.user_id).major == self.major}
+    student_group = Mentor.all.select {|n| n if User.find(n.user_id).student_group_category == self.student_group_category}
+    work_location_group = Mentor.all.select {|n| n if User.find(n.user_id).work_location == self.work_location}
     #Industry
     if self.mentee.industry_preference == 1
       group1 = industry_group
@@ -52,6 +54,10 @@ class User < ActiveRecord::Base
       group2 = industry_group
     elsif self.mentee.industry_preference == 3
       group3 = industry_group
+    elsif self.mentee.industry_preference == 4
+      group4 = industry_group
+    elsif self.mentee.industry_preference == 5
+      group5 = industry_group
     end
     #Major
     if self.mentee.major_preference == 1
@@ -60,6 +66,10 @@ class User < ActiveRecord::Base
       group2 = major_group
     elsif self.mentee.major_preference == 3
       group3 = major_group
+    elsif self.mentee.major_preference == 4
+      group4 = major_group
+    elsif self.mentee.major_preference == 5
+      group5 = major_group
     end
     #State
     if self.mentee.home_state_preference == 1
@@ -68,6 +78,34 @@ class User < ActiveRecord::Base
       group2 = state_group
     elsif self.mentee.home_state_preference == 3
       group3 = state_group
+    elsif self.mentee.home_state_preference == 4
+      group4 = state_group
+    elsif self.mentee.home_state_preference == 5
+      group5 = state_group
+    end
+    #student_group
+    if self.mentee.student_group_preference == 1
+      group1 = student_group
+    elsif self.mentee.student_group_preference == 2
+      group2 = student_group
+    elsif self.mentee.student_group_preference == 3
+      group3 = student_group
+    elsif self.mentee.student_group_preference == 4
+      group4 = student_group
+    elsif self.mentee.student_group_preference == 5
+      group5 = student_group
+    end
+    #work_location
+    if self.mentee.work_location_preference == 1
+      group1 = work_location_group
+    elsif self.mentee.work_location_preference == 2
+      group2 = work_location_group
+    elsif self.mentee.work_location_preference == 3
+      group3 = work_location_group
+    elsif self.mentee.work_location_preference == 4
+      group4 = work_location_group
+    elsif self.mentee.work_location_preference == 5
+      group5 = work_location_group
     end
     if group1.nil?
       group1 = []
@@ -78,12 +116,20 @@ class User < ActiveRecord::Base
     if group3.nil?
       group3 = []
     end
-    match_helper(group1, group2, group3)
+    if group4.nil?
+      group4 = []
+    end
+    if group5.nil?
+      group5 = []
+    end
+    match_helper(group1, group2, group3, group4, group5)
   end
   
-  def match_helper(group1, group2, group3)
+  def match_helper(group1, group2, group3, group4, group5)
     level1 = find_intersection(group1, group2)
     level2 = find_intersection(level1, group3)
+    level3 = find_intersection(level2, group4)
+    level4 = find_intersection(level3, group5)
   end
   
   def find_intersection(first_group, second_group)
