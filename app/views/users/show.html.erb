@@ -1,3 +1,58 @@
+<div class="top-bar foundation-5-top-bar">
+  <div id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
+      	<li><strong>CMU CONNECT</strong>&nbsp;
+        <li><a href="#">FORUM</a></li>
+        <li><a href="#">RESOURCE VAULT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+<br></br>
+
+<div class="card-profile-stats">
+  <div class="card-profile-stats-intro">
+    <img class="card-profile-stats-intro-pic" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="profile-image" />
+    <div class="card-profile-stats-intro-content">
+      <h3><%= @user.first_name%> <%= @user.last_name%></h3>
+      <p><%= @user.user_type%></small></p>
+	  <p><%= @user.email %></small></p>
+	  <p><%= @user.major%></small></p>
+	  <p><%= @user.bio%></small></p>
+    </div> <!-- /.card-profile-stats-intro-content -->
+  </div> <!-- /.card-profile-stats-intro -->
+
+  <hr />
+
+  <div class="card-profile-stats-container">
+    <div class="card-profile-stats-statistic">
+      <span class="stat"><%= image_tag('linkedin_icon.png', size: "120x120") %></span>
+      <p>LinkedIn</p>
+    </div> <!-- /.card-profile-stats-statistic -->
+    <div class="card-profile-stats-statistic">
+      <span class="stat"><%= image_tag('chat_icon.png', size: "105x105") %></span>
+      <p>Chat</p>
+    </div> <!-- /.card-profile-stats-statistic -->
+    <div class="card-profile-stats-statistic">
+      <span class="stat"><%= image_tag('calendar-icon.png', size: "105x105") %></span>
+      <p>Schedule Meeting</p>
+    </div> <!-- /.card-profile-stats-statistic -->
+  </div> <!-- /.card-profile-stats-container -->
+
+  <div class="card-profile-stats-more">
+    <p class="card-profile-stats-more-link"><a href="#"><i class="fa fa-angle-down" aria-hidden="true"></i></a></p>
+    <div class="card-profile-stats-more-content">
+      <p>
+        <%= @user.bio %>
+      </p>
+    </div> <!-- /.card-profile-stats-more-content -->
+  </div> <!-- /.card-profile-stats-more -->
+</div> <!-- /.card-profile-stats -->
+
+
+
 <p id="notice"><%= notice %></p>
 
 
