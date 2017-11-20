@@ -2,7 +2,7 @@ class Match < ActiveRecord::Base
   include SessionsHelper
   #relationpships
   belongs_to :mentor
-  belongs_to :mentee
+  has_one :mentee
   belongs_to :group
   
   def generate_match

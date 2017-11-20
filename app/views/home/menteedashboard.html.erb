@@ -43,7 +43,8 @@
   </div>
 
   <div class="large-4 columns">
-	  <% if !current_user.generate_match.empty? %>
+	  <% match = Match.all.select {|n| n if n.mentee_id == current_user.mentee.id} %>
+	  <% if !match.empty? %>
     <div class="portfolio-resume-wrapper">
 	  
 	  <div class="card profile-card-action-icons">
@@ -54,24 +55,23 @@
 	        </div>
 	        <div class="profile-card-author">
 				
-	          <h5 class="author-title"><%= User.find(current_user.generate_match.first.user_id).first_name %> <%= User.find(current_user.generate_match.first.user_id).last_name %> </h5>
-	          <p class="author-description"><%= current_user.generate_match.first.job_title %>, <%= current_user.generate_match.first.company %></p>
+	          <h5 class="author-title"><%= User.find(Mentor.find(match.first.mentor_id).user_id).first_name %> <%= User.find(Mentor.find(match.first.mentor_id).user_id).last_name %> </h5>
+	          <p class="author-description"><%= Mentor.find(match.first.mentor_id).job_title %>, <%= Mentor.find(match.first.mentor_id).company %></p>
 	        </div>
 	      </div>
 	      <div class="profile-card-about">
 	        <h5 class="about-title separator-left">Mentor</h5>
 	        <p class="about-content">
-	          Email: <%= User.find(current_user.generate_match.first.user_id).email %> <br></br>
-			  Major: <%= User.find(current_user.generate_match.first.user_id).major %> <br></br>
-			  Class of <%= current_user.generate_match.first.graduation %> <br></br>
+	          Email:  <%= User.find(Mentor.find(match.first.mentor_id).user_id).email %> <br></br>
+			  Major: <%= User.find(Mentor.find(match.first.mentor_id).user_id).major %> <br></br>
+			  Class of <%= Mentor.find(match.first.mentor_id).graduation %> <br></br>
 	        </p>
 	      </div>
 	      <div class="profile-card-action">
 			  <button class="button button-rounded-hover">View Profile</button>
 			  &nbsp;&nbsp;&nbsp;&nbsp;
 			  <button class="button button-rounded-hover">Chat</button>
-			  &nbsp;&nbsp;&nbsp;&nbsp;
-			  <button class="button button-rounded-hover">Video Chat</button>
+
 
 
 	      </div>

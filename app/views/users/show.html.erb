@@ -71,7 +71,9 @@
 
 <p>
   <strong>Match:</strong>
-  <%= @user.generate_match %>
+  <%#= Mentor.all.find(Match.all.find(@user.mentee.match.id).mentor_id)%>
+  <%# @user.generate_match %>
+  <%= match = Match.all.select {|n| n if n.mentee_id == @user.mentee.id} %>
 </p>
 <p>
   <strong>Industry Preference:</strong>
