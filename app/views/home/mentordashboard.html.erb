@@ -1,0 +1,89 @@
+<div class="top-bar foundation-5-top-bar">
+  <div id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
+      	<li><strong>CMU CONNECT</strong>&nbsp;
+        <li><a href="#">FORUM</a></li>
+        <li><a href="#">RESOURCE VAULT</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 
+<br></br>
+
+<div class="portfolio-resume row">
+
+  <div class="large-4 columns">
+    <div class="portfolio-resume-wrapper">
+      <img class="portfolio-resume-headshot" src="https://placehold.it/250" alt="headshot">
+<!-- use button tag for on page actions -->
+	  <br></br>
+<button class="button button-rounded-hover">Edit Profile</button>
+<br></br>
+<button class="button button-rounded-hover">Upload Resume</button>
+<br></br>
+<button class="button button-rounded-hover">Upload to Guidebook</button>
+
+
+
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+    <div class="portfolio-resume-wrapper">
+      <h3 class="portfolio-resume-header">Welcome <%= current_user.first_name %>!</h3>
+      <div class="portfolio-resume-spacing">
+        <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+        <p>Email: <%= current_user.email %> </p>
+		<p>Major: <%= current_user.major %> </p>
+		<p>Graudation Year: <%= current_user.mentee.expected_graduation %> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-4 columns">
+	  <!-- edit when logout functionality works -->
+	  <% match = Match.all.select {|n| n if n.mentor_id == 6} %>
+	  <% if !match.empty? %>
+    <div class="portfolio-resume-wrapper">
+	  
+	  <div class="card profile-card-action-icons">
+	    <div class="card-section">
+	      <div class="profile-card-header">
+	        <div class="profile-card-avatar">
+	          <img class="avatar-image" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="Harry Manchanda">
+	        </div>
+	        <div class="profile-card-author">
+				
+	          <h5 class="author-title"><%= User.find(Mentee.find(match.first.mentee_id).user_id).first_name %> <%= User.find(Mentee.find(match.first.mentee_id).user_id).last_name %> </h5>
+	          <p class="author-description"><%= User.find(Mentee.find(match.first.mentee_id).user_id).major %>, <%= Mentee.find(match.first.mentee_id).expected_graduation %></p>
+	        </div>
+	      </div>
+	      <div class="profile-card-about">
+	        <h5 class="about-title separator-left">Mentee</h5>
+	        <p class="about-content">
+	          Email:  <%= User.find(Mentee.find(match.first.mentee_id).user_id).email %> <br></br>
+			  Major: <%= User.find(Mentee.find(match.first.mentee_id).user_id).home_state %> <br></br>
+			  Preferred Industry: <%= Mentee.find(match.first.mentee_id).preferred_industry %> <br></br>
+	        </p>
+	      </div>
+	      <div class="profile-card-action">
+			  <%= link_to "View Profile", User.find(Mentee.find(match.first.mentee_id).user_id), :class => "button primary round expanded" %>
+
+
+
+
+	      </div>
+	    </div>
+	  </div>
+	 <% end %>
+
+	  
+
+    </div>
+  </div>
+
+</div>
+
+
