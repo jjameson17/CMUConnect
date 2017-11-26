@@ -153,13 +153,15 @@ class User < ActiveRecord::Base
   end
   
   def generate_match
-    mentor_match = group_rank.first
-    new_match = Match.new
-    new_match.mentor_id = mentor_match.id
-    new_match.mentee_id = self.mentee.id
-    new_match.active = true
-    new_match.group_id = 1
-    new_match.save!
+    if self.user_type == 'Mentee'
+      mentor_match = group_rank.first
+      new_match = Match.new
+      new_match.mentor_id = mentor_match.id
+      new_match.mentee_id = self.mentee.id
+      new_match.active = true
+      new_match.group_id = 1
+      new_match.save!
+    end
   end
   
 

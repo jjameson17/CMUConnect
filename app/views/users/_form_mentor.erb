@@ -1,26 +1,111 @@
-  
-  
-  <%= simple_nested_form_for @user, :html => { :class => 'form-horizontal' } do |user_form| %>
-  <div class="small-12 medium-6 column small-order-2 medium-order-1">
-        <fieldset>
-          <h3>Your Information</h3>
-          <%= render :partial => "user_fields", :locals => { :f => user_form } %>
-        </fieldset>
+<div class="top-bar foundation-5-top-bar">
+  <div id="responsive-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
+      	<li><strong>CMU CONNECT</strong>&nbsp;
+        <li><a href="#">FORUM</a></li>
+        <li><a href="#">RESOURCE VAULT</a></li>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li>Already have an account? </li>
+        <%= link_to "Sign In", login_path, class: "button round tiny info" %>
+      </ul>
+    </div>
   </div>
-<div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+</div>
 
-	<br></br>
-        <div id="user_mentor">
-          <%= user_form.simple_fields_for :mentor do |mentor_form| %>
-            <%= render :partial => "mentor_fields", :locals => { :f => mentor_form } %>
-          <% end %> 
+<div class="multi-step-checkout-process">
+  <div class="multi-step-checkout-process-step">
+    <ul class="accordion" data-accordion>
+      <li class="accordion-item is-active" data-accordion-item>
+        <a href="#" class="accordion-title">1. User Information <span class="multi-step-checkout-step-title-subheader">Step 1 of 2</span></a>
+        <div class="accordion-content" data-tab-content>
+		    <ol class="progress-indicator">
+		      <li class="is-current" data-step="">
+		      <span>Step 1</span>
+		      </li>
+		      <li class="" data-step="">
+		      <span>Step 2</span>
+		      </li>
+
+		    </ol>
+			<br></br>
+
+            <div class="row">
+
+              <div class="small-12 medium-9 column">
+                <div class="shipping-address multi-step-checkout-step-section">
+                  <!-- <h6 class="multi-step-checkout-step-subheader">User Information</h6>
+                  <p class="multi-step-checkout-step-subdesc">Please enter your information</p> -->
+
+
+					  <%= simple_nested_form_for @user, :html => { :class => 'form-horizontal' } do |user_form| %>
+					        <fieldset>
+					          <%= render :partial => "user_fields", :locals => { :f => user_form } %>
+					        </fieldset>
+                </div>
+              </div>
+            </div>
+        </div>
+      </li>
+
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordion-title">2. Mentor Information <span class="multi-step-checkout-step-title-subheader">Step 2 of 2</span></a>
+        <div class="accordion-content" data-tab-content>
+		    <ol class="progress-indicator">
+		      <li class="is-complete" data-step="">
+		      <span>Step 1</span>
+		      </li>
+		      <li class="is-current" data-step="">
+		      <span>Step 2</span>
+		      </li>
+
+		    </ol>
+
+            <div class="row">
+              <div class="small-12 medium-9 column">
+                <div class="multi-step-checkout-billing-address">
+			<!-- <h6 class="multi-step-checkout-step-subheader"></h6> -->
+					  	<br></br>
+					    <div id="user_mentor">
+				          <%= user_form.simple_fields_for :mentor do |mentor_form| %>
+				            <%= render :partial => "mentor_fields", :locals => { :f => mentor_form } %>
+				          <% end %>
+					    </div>
+                </div>
+                  <div><hr class="multi-step-checkout-form-divider"></div>
+                  <div><hr class="multi-step-checkout-form-divider"></div>
+			      <div class="form-actions">
+			        <%= user_form.submit nil, :class => 'button radius' %>
+			        <%= link_to 'Cancel', users_path, :class => 'button secondary' %>
+			      </div>
+			    <% end %>
+
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </li>
+
+    
+    </ul>
   </div>
-    </div>
-    <div class="form-actions">
-      <%= user_form.submit nil, :class => 'button radius' %>
-      <%= link_to 'Cancel', users_path, :class => 'button secondary' %>
-    </div>
-  <% end %>
+</div>
+
+
+  
+  
+
+
+
+
+
+
+  
+
 
 
 

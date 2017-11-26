@@ -17,11 +17,12 @@
     <div class="field">
 	  <%= f.text_field :password, placeholder: "Password" %>
     </div>
-</div>
-<div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
     <div class="field">
       <%= f.input :home_state, :collection => User::STATES_LIST, placeholder: "Home State" %>
     </div>
+</div>
+<div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+
     <div class="field">
 	  <%= f.select :major, ["Architecture", "Business Administration", "Computer Science", "Design", "Information Systems", "Mechanical Engineering", "Vocal Performance", "Other"], :prompt => "Major", placeholder: "Major" %>
     </div>
