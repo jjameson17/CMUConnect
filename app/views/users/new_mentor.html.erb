@@ -1,3 +1,18 @@
-<%= render 'form_mentor' %>
+<script type='text/javascript'>
 
-<%= link_to 'Back', users_path %>
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script>
+<%= render 'form_mentor' %>
