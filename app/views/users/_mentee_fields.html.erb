@@ -18,19 +18,19 @@
 	<h4>Matching Preferences</h4>
 	<p>Please rank the following criteria in generating your match to a mentor and group.  Indicate the most important as 1 and the least important as 5.</p>
     <div class="field">
-	  <%= f.select :industry_preference, [1, 2, 3, 4, 5], prompt: "Industry Preference Rank" %>
+	  <%= f.input :industry_preference, collection: [1, 2, 3, 4, 5], prompt: "Industry Preference Rank" %>
     </div>
     <div class="field">
-	  <%= f.select :home_state_preference, [1, 2, 3, 4, 5], prompt: "Home State Preference Rank" %>
+	  <%= f.input :home_state_preference, collection: [1, 2, 3, 4, 5], prompt: "Home State Preference Rank" %>
     </div>
     <div class="field">
-	  <%= f.select :major_preference, [1, 2, 3, 4, 5], prompt: "Major Preference Rank" %>
+	  <%= f.input :major_preference, collection: [1, 2, 3, 4, 5], prompt: "Major Preference Rank" %>
     </div>
     <div class="field">
-	  <%= f.select :student_group_preference, [1, 2, 3, 4, 5], prompt: "Student Group Preference Rank" %>
+	  <%= f.input :student_group_preference, collection: [1, 2, 3, 4, 5], prompt: "Student Group Preference Rank" %>
     </div>	
     <div class="field">
-	  <%= f.select :work_location_preference, [1, 2, 3, 4, 5], prompt: "Work Location Preference" %>
+	  <%= f.input :work_location_preference, collection: [1, 2, 3, 4, 5], prompt: "Work Location Preference" %>
     </div>
 </div>
     </div>
