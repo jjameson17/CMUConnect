@@ -8,7 +8,7 @@
 	<h4>Mentee Information</h4>
 	<p>Please Enter your desired future industry and expected graduation year</p>
     <div class="field">
-      <%= f.select :preferred_industry, ["Advertising", "Education", "Finance", "Health","Investment", "Manufacturing", "Pharmaceutical", "Retail", "Sales", "Software", "Other"], prompt:  "Preferred Industry", placeholder: "Preferred Industry" %>
+      <%= f.input :preferred_industry, collection: ["Advertising", "Consulting", "Education", "Finance", "Health","Investment", "Manufacturing", "Pharmaceutical", "Retail", "Sales", "Software", "Other"], placeholder: "Preferred Industry" %>
     </div>
     <div class="field">
        <%= f.number_field :expected_graduation, placeholder: "Expected Graduation Year" %>
@@ -16,7 +16,7 @@
 </div>
 <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
 	<h4>Matching Preferences</h4>
-	<p>Please rank the following criteria in generating your match to a mentor and group</p>
+	<p>Please rank the following criteria in generating your match to a mentor and group.  Indicate the most important as 1 and the least important as 5.</p>
     <div class="field">
 	  <%= f.select :industry_preference, [1, 2, 3, 4, 5], prompt: "Industry Preference Rank" %>
     </div>
