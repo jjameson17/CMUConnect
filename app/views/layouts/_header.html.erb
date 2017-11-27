@@ -8,15 +8,20 @@
          <li><a href="#">RESOURCE VAULT</a></li>
        </ul>
      </div>
+     <% if logged_in? %>
      <div class="top-bar-right">
        <ul class="menu">
-       	<% if logged_in? %>
-        <%= link_to "Log Out", logout_path, class: "button round tiny info" %>
-        <% else %>
+        <%= link_to "Log Out", logout_path, class: "button round tiny info", method: "delete" %>
+       </ul>
+    </div>
+     <% else %>
+      <div class="top-bar-right">
+       <ul class="menu">
         <li>Already have an account? </li>
-        <li><%= link_to "Log in", login_path, class: "button round tiny info" %></li>
+        <li><%= link_to "Log In", login_path, class: "button round tiny info" %></li>
         <%end%>
       </ul>
      </div>
    </div>
 </div>
+
