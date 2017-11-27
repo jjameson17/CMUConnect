@@ -24,14 +24,14 @@
 <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
 
     <div class="field">
-	  <%= f.select :major, ["Architecture", "Business Administration", "Computer Science", "Design", "Information Systems", "Mechanical Engineering", "Vocal Performance", "Other"], :prompt => "Major", placeholder: "Major" %>
+	  <%= f.select :major, ["Architecture", "Business Administration", "Computer Science", "Design", "Information Systems", "Mechanical Engineering", "Vocal Performance", "Other"], :prompt => "Major" %>
     </div>
     <div class="field">
 	 <%= f.text_field :school, placeholder: "School" %>
     </div>
 	
     <div class="field">
-	 <%= f.text_field :student_group_category, placeholder: "Student Group Category" %>
+	 <%= f.input :student_group_category, collection: User::STUDENT_GROUPS_LIST, placeholder: "Student Group Category" %>
     </div>
     <div class="field">
 	 <%= f.text_field :work_location, placeholder: "Preferred or current work location" %>
