@@ -8,7 +8,7 @@
       <%= f.text_field :company, placeholder: "Company" %>
     </div>
     <div class="field">
-       <%= f.text_field :industry, placeholder: "Industry" %>
+       <%= f.input :industry, collection: ["Advertising", "Consulting", "Education", "Finance", "Health","Investment", "Manufacturing", "Pharmaceutical", "Retail", "Sales", "Software", "Other"], placeholder: "Industry" %>
     </div>
     <div class="field">
        <%= f.number_field :graduation, placeholder: "Graduation Year" %>
