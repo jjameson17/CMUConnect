@@ -24,10 +24,10 @@
 <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
 
     <div class="field">
-	  <%= f.input :major, collection: ["Architecture", "Biology", "Chemistry", "Chemical Engineering", "Business Administration", "Computer Science", "Design", "Economics", "Information Systems", "Mathematics", "Mechanical Engineering", "Statistics", "Vocal Performance", "Other"], :placeholder => "Major" %>
+	  <%= f.input :major, collection: ["Architecture", "Art", "Biological Sciences", "Biomedical Engineering", "Business Administration", "Chemical Engineering", "Chemistry", "Civil and Environmental Engineering", "Computational Biology", "Computer Science", "Design", "Drama", "Economics", "Electrical and Computer Engineering", "Engineering and Public Policy", "English", "History", "Human-Computer Interaction Institute", "Information Networking Institute", "Information Systems", "Institute for Politics and Strategy", "Institute for Software Research","Language Technologies Institute", "Machine Learning", "Materials Science and Engineering", "Mathematical Sciences", "Mechanical Engineering", "Modern Languages", "Music", "Philosophy", "Physics", "Psychology", "The Robotics Institute", "Social and Decision Sciences", "Statistics", "Vocal Performance", "Other"], :placeholder => "Major" %>
     </div>
     <div class="field">
-	 <%= f.text_field :school, placeholder: "School" %>
+	 <%= f.input :school, collection: ["College of Engineering", "College of Fine Arts", "Dietrich College of Humanities and Social Sciences", "Mellon College of Science", "School of Computer Science", "Tepper School of Business"], placeholder: "School" %>
     </div>
 	
     <div class="field">
