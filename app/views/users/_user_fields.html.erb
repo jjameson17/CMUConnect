@@ -24,7 +24,7 @@
 <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
 
     <div class="field">
-	  <%= f.select :major, ["Architecture", "Business Administration", "Computer Science", "Design", "Information Systems", "Mechanical Engineering", "Vocal Performance", "Other"], :prompt => "Major" %>
+	  <%= f.input :major, collection: ["Architecture", "Biology", "Chemistry", "Chemical Engineering", "Business Administration", "Computer Science", "Design", "Economics", "Information Systems", "Mathematics", "Mechanical Engineering", "Statistics", "Vocal Performance", "Other"], :placeholder => "Major" %>
     </div>
     <div class="field">
 	 <%= f.text_field :school, placeholder: "School" %>
