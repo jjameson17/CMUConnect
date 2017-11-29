@@ -1,6 +1,6 @@
 <div class="small-12 medium-6 column small-order-2 medium-order-1">
 	<div class="field">
-	  <%= f.hidden_field :user_type, :value => "Mentee" %>
+	  <%= f.hidden_field :user_type, :value => "Mentor" %>
     </div>
     <div class="field">
 	  <%= f.text_field :first_name, placeholder:"First Name" %>
@@ -34,7 +34,7 @@
 	 <%= f.input :student_group_category, collection: User::STUDENT_GROUPS_LIST, placeholder: "Student Group Category" %>
     </div>
     <div class="field">
-	 <%= f.text_input :work_location, :collection => User::STATES_LIST, placeholder: "Preferred or current work location" %>
+	 <%= f.text_field :work_location, placeholder: "Preferred or current work location" %>
     </div>
 
     <div class="field">

@@ -1,14 +1,4 @@
-<div class="top-bar foundation-5-top-bar">
-  <div id="responsive-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
-      	<li><strong>CMU CONNECT</strong>&nbsp;
-        <li><a href="#">FORUM</a></li>
-        <li><a href="#">RESOURCE VAULT</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+
  
 <br></br>
 
@@ -37,14 +27,14 @@
         <p>Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
         <p>Email: <%= current_user.email %> </p>
 		<p>Major: <%= current_user.major %> </p>
-		<p>Graudation Year: <%= current_user.mentee.expected_graduation %> </p>
+		<p>Graudation Year: <%= current_user.mentor.graduation %> </p>
       </div>
     </div>
   </div>
 
   <div class="large-4 columns">
 	  <!-- edit when logout functionality works -->
-	  <% match = Match.all.select {|n| n if n.mentor_id == 6} %>
+	  <% match = Match.all.select {|n| n if n.mentor_id == current_user.mentor.id} %>
 	  <% if !match.empty? %>
     <div class="portfolio-resume-wrapper">
 	  

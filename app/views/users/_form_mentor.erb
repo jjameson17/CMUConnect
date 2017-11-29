@@ -1,20 +1,4 @@
-<div class="top-bar foundation-5-top-bar">
-  <div id="responsive-menu">
-    <div class="top-bar-left">
-      <ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
-      	<li><strong>CMU CONNECT</strong>&nbsp;
-        <li><a href="#">FORUM</a></li>
-        <li><a href="#">RESOURCE VAULT</a></li>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li>Already have an account? </li>
-        <%= link_to "Sign In", login_path, class: "button round tiny info" %>
-      </ul>
-    </div>
-  </div>
-</div>
+
 
 <div class="multi-step-checkout-process">
   <div class="multi-step-checkout-process-step">
@@ -43,7 +27,7 @@
 
 					  <%= simple_nested_form_for @user, :html => { :class => 'form-horizontal' } do |user_form| %>
 					        <fieldset>
-					          <%= render :partial => "user_fields", :locals => { :f => user_form } %>
+					          <%= render :partial => "user_fields_mentor", :locals => { :f => user_form } %>
 					        </fieldset>
                 </div>
               </div>
