@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'home/signin', to: 'home#signin', as: :signin
   get 'home/menteedashboard', to: 'home#menteedashboard', as: :menteedashboard
   get 'home/mentordashboard', to: 'home#mentordashboard', as: :mentordashboard
+  get 'home/dashboard', to: 'home#dashboard', as: :dashboard
   
   get 'new_mentor', to: 'users#new_mentor', :as => "new_mentor_signup"
 
