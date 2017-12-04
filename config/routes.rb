@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get "sign_up" => "users#new", :as => "sign_up"
   get "/profile", to: "users#index"
-  
+  get "home/mentor_matches", to: 'home#mentor_matches', as: :mentormatches
 
 
   # You can have the root of your site routed with "root"

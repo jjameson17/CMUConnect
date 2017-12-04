@@ -1,0 +1,37 @@
+<% mentor_matches = Match.all.select {|n| n if n.mentor_id == current_user.mentor.id} %>
+<% if !mentor_matches.empty? %>
+
+<div class="people-you-might-know">
+  <div class="add-people-header">
+    <h6 class="header-title">
+      Matches
+    </h6>
+  </div>
+
+<% mentor_matches.each do |match| %>
+  <div class="row add-people-section">
+    <div class="small-12 medium-6 columns about-people">
+      <div class="about-people-avatar">
+        <img class="avatar-image" src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" alt="Kishore Kumar">
+      </div>
+      <div class="about-people-author">
+        <p class="author-name">
+          <%= User.find(Mentee.find(match.mentee_id).user_id).first_name %> <%= User.find(Mentee.find(match.mentee_id).user_id).last_name %>
+        </p>
+        <p class="author-location">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <%= User.find(Mentee.find(match.mentee_id).user_id).major %>, <%= Mentee.find(match.mentee_id).expected_graduation %>
+        </p>
+      </div>    
+    </div>
+    <div class="small-12 medium-6 columns add-friend">
+      <div class="add-friend-action">
+        <%= link_to "View Profile", User.find(Mentee.find(match.mentee_id).user_id), :class => "button primary round" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+</div>
+<% end %>
+
