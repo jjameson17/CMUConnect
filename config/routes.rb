@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'home/signin', to: 'home#signin', as: :signin
   get 'home/menteedashboard', to: 'home#menteedashboard', as: :menteedashboard
   get 'home/mentordashboard', to: 'home#mentordashboard', as: :mentordashboard
+  get 'home/dashboard', to: 'home#dashboard', as: :dashboard
   
   get 'new_mentor', to: 'users#new_mentor', :as => "new_mentor_signup"
 
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get "sign_up" => "users#new", :as => "sign_up"
   get "/profile", to: "users#index"
-  
+  get "home/mentor_matches", to: 'home#mentor_matches', as: :mentormatches
 
 
   # You can have the root of your site routed with "root"

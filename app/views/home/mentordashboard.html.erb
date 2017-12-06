@@ -31,6 +31,8 @@
       </div>
     </div>
   </div>
+  
+  
 
   <div class="large-4 columns">
 	  <!-- edit when logout functionality works -->
@@ -46,20 +48,20 @@
 	        </div>
 	        <div class="profile-card-author">
 				
-	          <h5 class="author-title"><%= User.find(Mentee.find(match.first.mentee_id).user_id).first_name %> <%= User.find(Mentee.find(match.first.mentee_id).user_id).last_name %> </h5>
-	          <p class="author-description"><%= User.find(Mentee.find(match.first.mentee_id).user_id).major %>, <%= Mentee.find(match.first.mentee_id).expected_graduation %></p>
+	          <h5 class="author-title"><%= User.find(Mentee.find(match.last.mentee_id).user_id).first_name %> <%= User.find(Mentee.find(match.last.mentee_id).user_id).last_name %> </h5>
+	          <p class="author-description"><%= User.find(Mentee.find(match.last.mentee_id).user_id).major %>, <%= Mentee.find(match.last.mentee_id).expected_graduation %></p>
 	        </div>
 	      </div>
 	      <div class="profile-card-about">
-	        <h5 class="about-title separator-left">Mentee</h5>
+	        <h5 class="about-title separator-left">Most Recent Match</h5>
 	        <p class="about-content">
-	          Email:  <%= User.find(Mentee.find(match.first.mentee_id).user_id).email %> <br></br>
-			  Major: <%= User.find(Mentee.find(match.first.mentee_id).user_id).home_state %> <br></br>
-			  Preferred Industry: <%= Mentee.find(match.first.mentee_id).preferred_industry %> <br></br>
+	          Email:  <%= User.find(Mentee.find(match.last.mentee_id).user_id).email %> <br></br>
+			  Home State: <%= User.find(Mentee.find(match.last.mentee_id).user_id).home_state %> <br></br>
+			  Preferred Industry: <%= Mentee.find(match.last.mentee_id).preferred_industry %> <br></br>
 	        </p>
 	      </div>
 	      <div class="profile-card-action">
-			  <%= link_to "View Profile", User.find(Mentee.find(match.first.mentee_id).user_id), :class => "button primary round expanded" %>
+			  <%= link_to "View Profile", User.find(Mentee.find(match.last.mentee_id).user_id), :class => "button primary round expanded" %>
 
 
 
@@ -68,6 +70,7 @@
 	    </div>
 	  </div>
 	 <% end %>
+<%= link_to "View All Matches", mentormatches_path, :class => "button primary round" %>
 
 	  
 

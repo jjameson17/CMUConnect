@@ -1,0 +1,9 @@
+<% if current_user.user_type == 'Mentor'  %>
+  <script type="text/javascript">
+    window.location.href="mentordashboard"  // put your correct path in a string here
+  </script>
+<% else %>
+  <script type="text/javascript">
+    window.location.href="menteedashboard"  // put your correct path in a string here
+  </script>
+<% end %>
