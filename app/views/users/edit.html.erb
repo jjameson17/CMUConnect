@@ -1,6 +1,9 @@
 <h1>Editing User</h1>
-
+<%if current_user == "Mentee"%>
 <%= render 'form' %>
+<%else%>
+<%= render 'form_mentor' %>
+<%end%>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
