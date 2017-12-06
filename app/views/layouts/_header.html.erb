@@ -5,7 +5,7 @@
     		 <div class="top-bar-left">
        			<ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
        				<li><strong> <%= link_to "CMU CONNECT", dashboard_path%></strong>&nbsp;
-        		<li><a href="#">FORUM</a></li>
+        		<li><%= link_to "FORUM", public_forum_path%></li>
          		<li><a href="#">RESOURCE VAULT</a></li>
        			</ul>
      		</div>
@@ -20,8 +20,8 @@
     		 <div class="top-bar-left">
        			<ul class="dropdown vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown" data-auto-height="true" data-animate-height="true">
        				<li><strong> <%= link_to "CMU CONNECT", root_path%></strong>&nbsp;
-        		<li><a href="#">FORUM</a></li>
-         		<li><a href="#">RESOURCE VAULT</a></li>
+        		<li><%= link_to "FORUM", root_path%></li>
+         		<li><%= link_to "RESOURCE VAULT", root_path%></li>
        			</ul>
      		</div>
       <div class="top-bar-right">
