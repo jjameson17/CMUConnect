@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118020334) do
+ActiveRecord::Schema.define(version: 20171206035428) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
@@ -47,8 +47,9 @@ ActiveRecord::Schema.define(version: 20171118020334) do
     t.string   "industry"
     t.integer  "graduation"
     t.string   "job_title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "max_matches"
   end
 
   create_table "messages", force: :cascade do |t|
