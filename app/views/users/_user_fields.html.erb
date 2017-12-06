@@ -34,7 +34,7 @@
 	 <%= f.input :student_group_category, collection: User::STUDENT_GROUPS_LIST, placeholder: "Student Group Category" %>
     </div>
     <div class="field">
-	 <%= f.input :work_location, :collection => User::STATES_LIST, placeholder: "Preferred or current work location" %>
+	 <%= f.input :work_location, collection: User::STATES_LIST, placeholder: "Preferred or current work location" %>
     </div>
 
     <div class="field">
