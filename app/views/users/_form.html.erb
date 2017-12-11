@@ -62,11 +62,24 @@
                   <div><hr class="multi-step-checkout-form-divider"></div>
                   <div><hr class="multi-step-checkout-form-divider"></div>
 			      <div class="form-actions">
-			        <%= user_form.submit nil, :class => 'button radius' %>
+			        <%= user_form.submit nil, :class => 'button radius', :id => 'submit-user' %>
 			        <%= link_to 'Cancel', root_path, :class => 'button secondary' %>
 			      </div>
 			    <% end %>
-
+			    <script>
+			    	$(document).ready(function(){
+				    	$("#submit-user").submit(function(event){
+					      console.log("submit clicked");
+					      console.log($("#sortable"));
+					      console.log($("#sortable > li"));
+					      $("#sortable > li").each(function(key, value){
+					        console.log(key, value);
+					      })
+					      event.preventDefault();
+					      return false;
+					    })
+			    	});
+			    </script>
                 </div>
               </div>
             </div>

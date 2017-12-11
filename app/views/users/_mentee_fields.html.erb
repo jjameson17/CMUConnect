@@ -1,3 +1,4 @@
+  
   <div class="fields">
     <div class="min_mentee">
     <!-- <div class="field">
@@ -34,4 +35,22 @@
     </div>
 </div>
     </div>
+
+<ul id="sortable">
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Home State</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Industry</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Major</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Student Group</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Work Location</li>
+</ul>
+
+<script>
+  $( function() {
+    console.log("running")
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+    
+  } );
+</script>
+
   </div>
