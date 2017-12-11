@@ -14,8 +14,8 @@
     <div class="field">
 	  <%= f.text_field :username, placeholder: "Username" %>
     </div>
-    <div class="field">
-	  <%= f.text_field :password, placeholder: "Password" %>
+    <div class="field" >
+	  <%= f.password_field :password, placeholder: "Password" %>
     </div>
     <div class="field">
       <%= f.input :home_state, :collection => User::STATES_LIST, placeholder: "Home State" %>
@@ -29,12 +29,12 @@
     <div class="field">
 	 <%= f.input :school, collection: ["College of Engineering", "College of Fine Arts", "Dietrich College of Humanities and Social Sciences", "Mellon College of Science", "School of Computer Science", "Tepper School of Business"], placeholder: "School" %>
     </div>
-	
+	<p>Please select the Student Group Category that you best associate with </p>
     <div class="field">
 	 <%= f.input :student_group_category, collection: User::STUDENT_GROUPS_LIST, placeholder: "Student Group Category" %>
     </div>
     <div class="field">
-	 <%= f.input :work_location, collection: User::STATES_LIST, placeholder: "Preferred or current work location" %>
+	 <%= f.input :work_location, collection: User::STATES_LIST, placeholder: "Preferred work location" %>
     </div>
 
     <div class="field">

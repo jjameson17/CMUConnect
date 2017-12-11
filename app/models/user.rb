@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  
+  mount_uploader :image_filename, PhotoUploader
+  
   has_one :mentor
   has_one :mentee
   has_many :resources
