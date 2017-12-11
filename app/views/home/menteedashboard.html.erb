@@ -2,18 +2,28 @@
  
 <br></br>
 
+ 	 <%# if !current_user.image_filename.nil? %>
+ 	     <p><%#= image_tag current_user.image_filename %></p>
+ 	   <%# end %>
+	   
+	   
+
 <div class="portfolio-resume row">
 
   <div class="large-4 columns">
     <div class="portfolio-resume-wrapper">
-      <img class="portfolio-resume-headshot" src="https://placehold.it/250" alt="headshot">
+	<% if current_user.image_filename.nil? %>
+		<img class="portfolio-resume-headshot" src="https://placehold.it/250" alt="headshot">
+	<% else %>
+		<%= image_tag current_user.image_filename ,:class=> "img-circular" %>
+	<% end %>
 <!-- use button tag for on page actions -->
 	  <br></br>
-<button class="button button-rounded-hover">Edit Profile</button>
+<button class="button primary round">Edit Profile</button>
 <br></br>
-<button class="button button-rounded-hover">Upload Resume</button>
+<%= link_to "Upload Photo", photo_upload_path, :class => "button primary round" %>
 <br></br>
-<button class="button button-rounded-hover">Access Guidebook</button>
+<button class="button primary round">Access Guidebook</button>
 
 
 
@@ -67,8 +77,9 @@
 	    </div>
 	  </div>
 	 <% end %>
+	 
 
-	  
+
 
     </div>
   </div>

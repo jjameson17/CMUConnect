@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "/profile", to: "users#index"
   get "home/mentor_matches", to: 'home#mentor_matches', as: :mentormatches
+  
+  get "home/menteedashboard/photoupload", to: 'users#photo_upload', as: :photo_upload
 
 
   # You can have the root of your site routed with "root"

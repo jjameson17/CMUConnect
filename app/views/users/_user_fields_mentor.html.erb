@@ -29,12 +29,12 @@
     <div class="field">
 	 <%= f.input :school, collection: ["College of Engineering", "College of Fine Arts", "Dietrich College of Humanities and Social Sciences", "Mellon College of Science", "School of Computer Science", "Tepper School of Business"], placeholder: "School" %>
     </div>
-	
+	<p>Please select the Student Group Category that you best associate with </p>
     <div class="field">
 	 <%= f.input :student_group_category, collection: User::STUDENT_GROUPS_LIST, placeholder: "Student Group Category" %>
     </div>
     <div class="field">
-	 <%= f.text_field :work_location, placeholder: "Preferred or current work location" %>
+	 <%= f.input :work_location, :collection => User::STATES_LIST, placeholder: "Current Work Location" %>
     </div>
 
     <div class="field">
