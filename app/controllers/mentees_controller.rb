@@ -51,6 +51,8 @@ class MenteesController < ApplicationController
     end
   end
 
+
+
   # DELETE /mentees/1
   # DELETE /mentees/1.json
   def destroy
